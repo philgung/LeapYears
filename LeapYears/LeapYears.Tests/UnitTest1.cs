@@ -20,7 +20,7 @@ namespace LeapYears.Tests
 
         private bool IsLeapYears(int years)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
     }
 }
