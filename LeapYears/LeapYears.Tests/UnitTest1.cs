@@ -5,11 +5,6 @@ namespace LeapYears.Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Should_return_true_when_isLeapYears_for_2000()
         {
@@ -19,9 +14,17 @@ namespace LeapYears.Tests
         }
         
         [Test]
-        public void Should_return_true_when_isLeapYears_for_1700()
+        public void Should_return_false_when_isLeapYears_for_1700()
         {
             var isLeapYears = IsLeapYears(1700);
+
+            Check.That(isLeapYears).IsFalse();
+        }
+
+        [Test]
+        public void Should_return_false_when_isLeapYears_for_1800()
+        {
+            var isLeapYears = IsLeapYears(1800);
 
             Check.That(isLeapYears).IsFalse();
         }
