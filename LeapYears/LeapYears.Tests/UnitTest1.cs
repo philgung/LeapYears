@@ -35,6 +35,8 @@ namespace LeapYears.Tests
         }
 
         [TestCase(2017)]
+        [TestCase(2018)]
+        [TestCase(2019)]
         public void Should_return_false_when_year_was_not_divisible_by_4(int years)
         {
             var isLeapYears = IsLeapYears(years);
@@ -44,21 +46,18 @@ namespace LeapYears.Tests
 
         private bool IsLeapYears(int years)
         {
-            if (IsDivisibleBy(100, years) && !IsDivisibleBy(400, years))
+            if (!IsDivisibleBy(4, years))
             {
                 return false;
             }
 
-            if (years % 4 != 0)
+            if (IsDivisibleBy(100, years) && !IsDivisibleBy(400, years))
             {
                 return false;
             }
             return true;
         }
 
-        private static bool IsDivisibleBy(int divider, int years)
-        {
-            return years % divider == 0;
-        }
+        private static bool IsDivisibleBy(int divider, int years) => years % divider == 0;
     }
 }
