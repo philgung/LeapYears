@@ -17,6 +17,15 @@ namespace LeapYears.Tests
 
             Check.That(isLeapYears).IsTrue();
         }
+        
+        [Test]
+        public void Should_return_true_when_isLeapYears_for_1700()
+        {
+            var isLeapYears = IsLeapYears(1700);
+
+            Check.That(isLeapYears).IsFalse();
+        }
+
 
         private bool IsLeapYears(int years)
         {
