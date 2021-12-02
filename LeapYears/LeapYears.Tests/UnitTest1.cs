@@ -1,3 +1,4 @@
+using NFluent;
 using NUnit.Framework;
 
 namespace LeapYears.Tests
@@ -10,9 +11,16 @@ namespace LeapYears.Tests
         }
 
         [Test]
-        public void Test1()
+        public void Should_return_true_when_isLeapYears_for_2000()
         {
-            Assert.Pass();
+            var isLeapYears = IsLeapYears(2000);
+
+            Check.That(isLeapYears).IsTrue();
+        }
+
+        private bool IsLeapYears(int years)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
