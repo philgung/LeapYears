@@ -34,9 +34,22 @@ namespace LeapYears.Tests
             Check.That(isLeapYears).IsTrue();
         }
 
+        [TestCase(2017)]
+        public void Should_return_false_when_year_was_not_divisible_by_4(int years)
+        {
+            var isLeapYears = IsLeapYears(years);
+
+            Check.That(isLeapYears).IsFalse();
+        }
+
         private bool IsLeapYears(int years)
         {
             if (IsDivisibleBy(100, years) && !IsDivisibleBy(400, years))
+            {
+                return false;
+            }
+
+            if (years % 4 != 0)
             {
                 return false;
             }
